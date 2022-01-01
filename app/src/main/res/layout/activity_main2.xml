@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFFFFFF"
+    tools:context=".MainActivity2">
+
+    <Button
+        android:id="@+id/timer"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/timer"
+        android:gravity="center"
+        android:text="30"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </Button>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="199dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineSpotShadowColor="@color/black"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="151dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="105dp"
+                android:layout_marginLeft="111dp"
+                android:layout_marginTop="50dp"
+                android:freezesText="true"
+                android:gravity="center"
+                android:text="20+2=??"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/counter"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="119dp"
+                android:layout_marginLeft="119dp"
+                android:layout_marginTop="30dp"
+                android:freezesText="true"
+                android:gravity="center"
+                android:text="السؤال 0"
+
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-130dp"
+                android:background="@drawable/correct"
+                android:freezesText="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/incorrect"
+                android:freezesText="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="-21dp"
+                android:freezesText="true"
+                android:text="  0"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="-50dp"
+                android:freezesText="true"
+                android:text="  0"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="560dp"
+        android:background="@drawable/game_btn"
+        android:gravity="center"
+        android:onClick="submit"
+        android:shadowColor="@color/black"
+        android:text="تأكيد"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </Button>
+
+    <Button
+        android:id="@+id/Next"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="628dp"
+        android:background="@drawable/game_btn"
+        android:gravity="center"
+        android:onClick="Next"
+        android:shadowColor="@color/black"
+        android:text="التالي"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </Button>
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="208dp"
+        android:gravity="center"
+        android:hint="جاوب هنا"
+        android:textColorHint="@color/black"
+        android:inputType="number"
+        android:paddingBottom="19dp"
+
+        android:textColorLink="@color/black"
+        android:shadowColor="@color/black"
+        android:textColor="#020202"
+        android:textColorHighlight="#0C0C0C"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/GameRe"
+        android:layout_width="44dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="28dp"
+        android:text="/10"
+        android:textColor="#CC000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Counter"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
