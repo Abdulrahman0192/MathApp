@@ -26,7 +26,7 @@ int pons = random.nextInt(100);
 long backPressed = 0;
 int counter = 0, result = 0, num1, num2, answerHolder, c, r, playerPoints, timeDown = 10;
 int a = 1;
-
+int x;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -90,22 +90,23 @@ protected void onCreate(Bundle savedInstanceState) {
 
 public void updater() {
 
-
     timeDown = 10;
     timer.setText("0");
 
     Random random = new Random();
 
+    num1 = random.nextInt(8) + 1;
+    x = random.nextInt(5) + 1;
 
-    num1 = random.nextInt(12);
-    num2 = random.nextInt(12);
+    num2 = num1 * x;
     countDownTimer.start();
-    question.setText(num1 + "÷" + num2 + "=" + "??");
+    question.setText(num2 + "÷" + num1 + "=" + "??");
     next.setEnabled(false);
     submit.setEnabled(true);
     counter++;
 
     counter1.setText(counter + "السؤال ");
+
 
 }//end method
 
@@ -123,7 +124,7 @@ public void submit(View view) {
     timer.setText("0");
     answerHolder = Integer.parseInt(answer.getText().toString().trim());
 
-    result = num1 / num2;
+    result = num2 / num1;
 
 
     if (answerHolder == result) {
