@@ -1,7 +1,5 @@
 package com.example.mathapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -12,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
@@ -106,7 +106,7 @@ public void updater() {
     submit.setEnabled(true);
     counter++;
 
-    counter1.setText("السؤال "+counter);
+    counter1.setText("السؤال " + counter);
 
 }//end method
 
@@ -119,36 +119,46 @@ public void Next(View view) {
 }//end method
 
 public void submit(View view) {
-    countDownTimer.cancel();
-    timeDown = 0;
-    timer.setText("0");
-    answerHolder = Integer.parseInt(answer.getText().toString().trim());
 
-    result = num1 * num2;
+    if (submit.isPressed() &&answer.getText().toString().isEmpty()) {
 
+        Toast.makeText(this, "يجب عليك ان ادخال قيمة", Toast.LENGTH_SHORT).show();
 
-    if (answerHolder == result) {
-
-        Toast.makeText(this, "true", Toast.LENGTH_SHORT).show();
-        c++;
-        playerPoints += pons;
-        correct.setText("  " + c);
     }//end if
-
 
     else {
 
-        Toast.makeText(this, "false", Toast.LENGTH_SHORT).show();
-        r++;
-        incorrect.setText("  " + r);
+
+        countDownTimer.cancel();
+        timeDown = 0;
+        timer.setText("0");
+        answerHolder = Integer.parseInt(answer.getText().toString().trim());
+
+        result = num1 * num2;
+
+
+        if (answerHolder == result) {
+
+            Toast.makeText(this, "true", Toast.LENGTH_SHORT).show();
+            c++;
+            playerPoints += pons;
+            correct.setText("  " + c);
+        }//end if
+
+
+        else {
+
+            Toast.makeText(this, "false", Toast.LENGTH_SHORT).show();
+            r++;
+            incorrect.setText("  " + r);
+
+        }//end else
+
+
+        next.setEnabled(true);
+        submit.setEnabled(false);
 
     }//end else
-
-
-    next.setEnabled(true);
-    submit.setEnabled(false);
-
-
 }//end method
 
 void cancelTimer() {
@@ -187,8 +197,8 @@ public void onBackPressed() {
     else {
         Intent intent = new Intent(MainActivity3.this, MainActivity.class);
         startActivity(intent);
-        playerPoints=0;
-        c=0;
+        playerPoints = 0;
+        c = 0;
         this.finish();
 
     }//end else

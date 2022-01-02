@@ -105,7 +105,7 @@ public void updater() {
     submit.setEnabled(true);
     counter++;
 
-    counter1.setText("السؤال"+counter);
+    counter1.setText("السؤال" + counter);
 
 }//end method
 
@@ -118,35 +118,46 @@ public void Next(View view) {
 }//end method
 
 public void submit(View view) {
-    countDownTimer.cancel();
-    timeDown = 0;
-    timer.setText("0");
-    answerHolder = Integer.parseInt(answer.getText().toString().trim());
 
-    result = num1 + num2;
+    if (submit.isPressed() &&answer.getText().toString().isEmpty()) {
 
+        Toast.makeText(this, "يجب عليك ان ادخال قيمة", Toast.LENGTH_SHORT).show();
 
-    if (answerHolder == result) {
-
-        Toast.makeText(this, "true", Toast.LENGTH_SHORT).show();
-        c++;
-        playerPoints += pons;
-        correct.setText("  " + c);
     }//end if
-
 
     else {
 
-        Toast.makeText(this, "false", Toast.LENGTH_SHORT).show();
-        r++;
-        incorrect.setText("  " + r);
 
-    }//end else
+        countDownTimer.cancel();
+        timeDown = 0;
+        timer.setText("0");
+        answerHolder = Integer.parseInt(answer.getText().toString().trim());
+
+        result = num1 + num2;
 
 
-    next.setEnabled(true);
-    submit.setEnabled(false);
+        if (answerHolder == result) {
 
+            Toast.makeText(this, "true", Toast.LENGTH_SHORT).show();
+            c++;
+            playerPoints += pons;
+            correct.setText("  " + c);
+        }//end if
+
+
+        else {
+
+            Toast.makeText(this, "false", Toast.LENGTH_SHORT).show();
+            r++;
+            incorrect.setText("  " + r);
+
+        }//end else
+
+
+        next.setEnabled(true);
+        submit.setEnabled(false);
+
+    }
 
 }//end method
 
@@ -186,9 +197,9 @@ public void onBackPressed() {
     else {
         Intent intent = new Intent(MainActivity2.this, MainActivity.class);
         startActivity(intent);
-        playerPoints=0;
-        c=0;
-       this.finish();
+        playerPoints = 0;
+        c = 0;
+        this.finish();
 
     }//end else
 
